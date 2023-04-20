@@ -1,4 +1,5 @@
 import tkinter as tk
+import random
 
 class TicTacToe:
     def __init__(self, master):
@@ -33,10 +34,27 @@ class TicTacToe:
                 self.check_for_winner()
                 if not self.game_over:
                     self.switch_player()
+                    if self.player == "O":
+                        self.make_ai_move()
 
     def switch_player(self):
         self.player = "O" if self.player == "X" else "X"
         self.status_label.config(text=f"Player {self.player}'s turn")
+
+    def make_ai_move(self):
+        # Find empty cells and choose one at random
+        empty_cells = [(i, j) for i in range(3) for j in range(3) if self.board[i][j] == ""]
+        row, col = random.choice(empty_cells)
+
+        # Update button and board state
+        button = self.buttons[row][col]
+        button["text"] = self.player
+        self.board[row][col] = self.player
+
+        # Check for winner and switch player
+        self.check_for_winner()
+        if not self.game_over:
+            self.switch_player()
 
     def check_for_winner(self):
         for i in range(3):
