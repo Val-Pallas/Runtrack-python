@@ -3,25 +3,22 @@ dans son constructeur.
 Instancier un objet Animal et écrire en console l’attribut âge. Créer une méthode “vieillir”
 qui ajoute 1 à l'âge de l’animal. Faire vieillir votre animal et afficher son âge en console."""
 
-    #def vieillir(self, other):
-     #   result = self.age + other.age
-      #  return Animal(result, self.age + other.age)
-
 class Animal:
-    def __init__(self, age, pas):
+    
+    def __init__(self):
+        age = 0
         self.age = age
-        self.pas = pas
+        self.name = "" 
        
-    
-    
     def incrementation(self):
-        self.age += self.pas
+        self.age += 1
 
-age = 0
-    
-inc = Animal(age, 1)
-
-print("L'age de l'animal :" , inc.age)
-inc.incrementation()
-print("L'age de l'animal incremente :", inc.age)
-
+    def nommer(self, name):
+        self.name = name
+        
+animal = Animal()    
+print("L'age de l'animal :" , animal.age)
+animal.incrementation()
+print("L'age de l'animal incremente :", animal.age)
+animal.nommer("Luna")
+print("L'animal se nomme :", animal.name)
