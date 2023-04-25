@@ -1,13 +1,16 @@
+
+from job07 import Livre
+
 class Livre:
     def __init__(self, disponible):
         self.__disponible = disponible
-
+        
     def stock(self, n):
         self.__disponible += n
-
-    def get_disponible(self):
+        
+    def get__disponible(self):
         return self.__disponible
-
+        
     def emprunter(self):
         if self.__disponible > 0:
             self.__disponible -= 1
@@ -17,11 +20,13 @@ class Livre:
 
 livre = Livre(5)
 
-print("There are", livre.get_disponible(), "livres available")
+print("there are :", livre.get__disponible(), "livres available")
 
 if livre.emprunter():
     print("You have borrowed a livre")
 else:
     print("There are no livres available to borrow")
+    
+#print("you take :", livre.get_disponible(), "livre/s available")
+print("you take :", livre.get__disponible(), "livres available")
 
-print("There are", livre.get_disponible(), "livre/s available")
