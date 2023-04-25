@@ -16,7 +16,18 @@ class Voiture(Vehicule):
              
         def informationDuVehicule(self):
             return f"{self.marque} {self.model} {self.anne} {self.prix} {self.portes}"
+
+class Moto(Vehicule):
+    def __init__(self, marque, model, anne, prix, roues):
+             super().__init__(marque, anne, prix)
+             self.model = model
+             self.roues = roues
              
+    def informationDuVehicule(self):
+            return f"{self.marque} {self.model} {self.anne} {self.prix} {self.roues}"
+
         
 voiture = Voiture("Mercedes","classe A", 2020, 18500, 4)
 print(voiture.informationDuVehicule())
+moto = Moto("Yamaha", "1200 Vamx" , 1987, 4500, 2)
+print(moto.informationDuVehicule())
