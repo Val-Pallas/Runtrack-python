@@ -1,17 +1,33 @@
-class Rectangle:
-    def __init__(self, longueur, largeur):
-        self.__longueur = longueur
-        self.__largeur = largeur
-        
-    def mesures(self):
-        print("Longueur :", self.__longueur)
-        print("Largeur :", self.__largeur)
-        
-    def get_longueur(self):
-        return self.__longueur
+class Livre:
+    def __init__(self, title, pages):
+        self.title = title
+        self.pages = pages
+        self.disponible = True
     
-    def get_largeur(self):
-        return self.__largeur
+    def droites(self, author, pages):
+        self.author = author
+        self.pages = pages
+        
+    def get_author(self):
+        return self.author
     
-rectangle = Rectangle(10,23)
-rectangle.mesures()
+    def get_pages(self):
+        return self.pages
+    
+    def set_author(self, author):
+        self.author = author
+    
+    def set_pages(self, pages):
+        self.pages = pages
+    
+livre = Livre("Juan salvador Gaviota", 120)
+
+print(livre.title)
+print(livre.pages)
+
+livre.author = "Richard Bach"
+print(livre.author)
+
+livre.set_pages(150)
+print(livre.get_pages())
+
