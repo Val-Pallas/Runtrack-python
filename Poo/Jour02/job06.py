@@ -8,6 +8,9 @@ class Vehicule():
         #self.model = model
         pass
     
+    def demarrer(self):
+        print("Brum Brum")
+    
 class Voiture(Vehicule):
         def __init__(self, marque, model, anne, prix, portes):
              super().__init__(marque, anne, prix)
@@ -29,5 +32,7 @@ class Moto(Vehicule):
         
 voiture = Voiture("Mercedes","classe A", 2020, 18500, 4)
 print(voiture.informationDuVehicule())
+print(voiture.demarrer())
 moto = Moto("Yamaha", "1200 Vamx" , 1987, 4500, 2)
 print(moto.informationDuVehicule())
+moto.demarrer()
