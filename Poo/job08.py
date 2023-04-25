@@ -27,6 +27,6 @@ if livre.emprunter():
 else:
     print("There are no livres available to borrow")
     
-#print("you take :", livre.get_disponible(), "livre/s available")
+
 print("you take :", livre.get__disponible(), "livres available")
 
